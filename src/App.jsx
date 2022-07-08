@@ -1,17 +1,16 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Contador from './components/Contador';
-import TheNav from './components/TheNav';
-
+import {BrowserRouter as Router , Route , Routes} from "react-router-dom"
+import Navigation from './components/common/Navigation';
+import Inicio from "./components/pages/Inicio"
 function App() {
   return (
-    <div className="text-center">
-      <TheNav />
-      <h1 > Hola Mundo</h1>
-
-      <button type="button" className="btn btn-primary">Primary</button>
-
-    </div>
+    <Router>
+      <Navigation></Navigation>
+      <Routes>
+        <Route exact path = "/" element= {<Inicio></Inicio>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
