@@ -1,0 +1,18 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombreProducto": "Don David",
+      "precioProducto": "950",
+      "categoria": "Malbec"
+
+    } ,
+    {
+      "id": 2,
+      "nombreProducto": "Trumpeter",
+      "precioProducto": "1000",
+      "categoria": "Cabernet sauvignon"
+
+    }
+  ]
+}
