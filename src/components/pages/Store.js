@@ -15,7 +15,9 @@ const Store = () => {
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
 </Card>
+
     );
 };
+
 
 export default Store;
