@@ -9,13 +9,14 @@ import Login from './components/pages/Login';
 import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
 function App() {
-
+  const URL = process.env.REACT_APP_API_URL;
+console.log (URL)
 const [productos, setProductos] = useState ([])
 useEffect (()=>{consultarApi()} , []);
 
 const consultarApi = async() => {try {
-const respuesta = await fetch ("http://localhost:3003/productos")
-const dato =  respuesta.json()
+const respuesta = await fetch (URL)
+const dato =  await respuesta.json()
 console.log (dato)
 setProductos(dato)} catch(error) {
 console.log (error)
@@ -29,7 +30,7 @@ console.log (error)
         <Route exact path = "/" element= {<Inicio></Inicio>}></Route>
         <Route exact path = "/store" element= {<Store></Store>}></Route>
 
-        <Route exact path = "/adminBoard" element= {<ListaProductos productos={productos}></ListaProductos>}></Route>
+        <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos} ></ListaProductos>}></Route>
         <Route exact path = "/login" element= {<Login></Login>}></Route>
       </Routes>
       <Footer></Footer>

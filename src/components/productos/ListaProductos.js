@@ -4,6 +4,8 @@ import ItemProducto from "./ItemProducto"
 import {Link} from 'react-router-dom'
 
 const ListaProductos = (props) => {
+    console.log (props.productos)
+
   return (
     <Container className="my-5">
       <h1 className="text-center mb-5">Lista de productos</h1>
@@ -13,7 +15,7 @@ const ListaProductos = (props) => {
 {/* <Link to="/nuevo" className="btn btn-primary">Agregar</Link> */}
       </article>
       <ListGroup>
-        console.log(productos)
+        
 {/* {props.productos.map ((producto)=><ItemProducto key= {producto.id}></ItemProducto>)} */}
       </ListGroup>
     </Container>
