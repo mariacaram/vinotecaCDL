@@ -12,11 +12,10 @@ const ListaProductos = (props) => {
       <hr />
       <article className="d-flex align-items-center mb-4 justify-content-end">
         <p className="my-0 me-4 fw-bold">Agregar nuevos productos: </p>
-{/* <Link to="/nuevo" className="btn btn-primary">Agregar</Link> */}
+<Link to="/nuevo" className="btn btn-primary">Agregar</Link>
       </article>
       <ListGroup>
-        
-{/* {props.productos.map ((producto)=><ItemProducto key= {producto.id}></ItemProducto>)} */}
+{props.productos.map ((producto)=><ItemProducto key= {producto.id} producto = {producto}></ItemProducto>)}
       </ListGroup>
     </Container>
   );
