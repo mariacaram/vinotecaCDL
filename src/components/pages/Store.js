@@ -1,21 +1,15 @@
 import React from 'react';
-
 import { Card, Button} from 'react-bootstrap'
+import Producto from '../Producto';
 
-const Store = () => {
+const Store = ({productos}) => {
+const mapProductos = productos.map((producto, i) => (<Producto key = {i} producto = {producto}></Producto>)) 
+
     return (
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-    );
+      <div className="d-flex flex-wrap justify-content-between">{mapProductos}
+
+      </div>
+    )
 };
 
 export default Store;

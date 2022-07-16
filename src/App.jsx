@@ -28,7 +28,7 @@ console.log (error)
 
       <Routes>
         <Route exact path = "/" element= {<Inicio></Inicio>}></Route>
-        <Route exact path = "/store" element= {<Store></Store>}></Route>
+        <Route exact path = "/store" element= {<Store productos = {productos}></Store>}></Route>
 
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos} ></ListaProductos>}></Route>
         <Route exact path = "/login" element= {<Login></Login>}></Route>
