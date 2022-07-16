@@ -8,6 +8,9 @@ import ListaProductos from './components/productos/ListaProductos';
 import Login from './components/pages/Login';
 import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
+import Register from './components/pages/Register';
+
+
 function App() {
   const URL = process.env.REACT_APP_API_URL;
 console.log (URL)
@@ -32,6 +35,7 @@ console.log (error)
 
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos} ></ListaProductos>}></Route>
         <Route exact path = "/login" element= {<Login></Login>}></Route>
+        <Route exact path = "/register" element= {<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>
     </Router>
