@@ -33,6 +33,7 @@ console.log (error)
 
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos} ></ListaProductos>}></Route>
         <Route exact path = "/login" element= {<Login></Login>}></Route>
+        <Route exact path = "/nuevo" element= {<AgregarProducto></AgregarProducto>}></Route>
       </Routes>
       <Footer></Footer>
     </Router>
