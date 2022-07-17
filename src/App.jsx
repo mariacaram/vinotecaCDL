@@ -8,6 +8,7 @@ import ListaProductos from './components/productos/ListaProductos';
 import Login from './components/pages/Login';
 import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
+import AgregarProducto from './components/productos/AgregarProducto';
 function App() {
   const URL = process.env.REACT_APP_API_URL;
 console.log (URL)
