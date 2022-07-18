@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row, Form } from 'react-bootstrap'
+import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 import { CardsLogin } from '../CardsLogin/CardsLogin'
 
 function Login() {
@@ -13,19 +13,25 @@ function Login() {
           alt="Bootstrap 5"
         />
         <h1 className="mb-3 fs-3 fw-normal">Please sign in</h1>
-      <Form.Group>
-        <Form.Control type="email" size="lg" placeholder="email adress" autoComplete="username" className="position-relative">
+      <Form.Group controlId="sign-in-email-address">
+        <Form.Control type="email" size="lg" placeholder="email address" autoComplete="username" className="position-relative">
 
         </Form.Control>
-        <Form.Group class="mb-3">
+        <Form.Group controlId="sign-in-password" class="mb-3">
         <Form.Control type="password" size="lg" placeholder="password" autoComplete="current-password" className="position-relative">
         
         </Form.Control>
         </Form.Group>
       </Form.Group>
-      <Form.Group className="d-flex justify-content-center">
+      <Form.Group controlId="remember-me" className="d-flex justify-content-center mb-4">
       <Form.Check label="Remember me"/>
       </Form.Group>
+      <div className="d-grid">
+      <Button variant="primary" size="lg">Sign in</Button>
+      </div>
+      <p className="mt-5 text-muted">
+        &copy; 2022
+      </p>
       </Form>
     </Container>
     )
