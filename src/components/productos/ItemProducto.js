@@ -27,7 +27,7 @@ const ItemProducto = (props) => {
           if (respuesta.status === 200) {
             // Asumimos que se borro el producto
             Swal.fire("Borrado", "Producto eliminado", "success");
-            props.consultarAPI();
+            props.consultarApi()
           }
           // Mostrar cartel de error
         } catch (error) {}
