@@ -27,7 +27,11 @@ const ItemProducto = (props) => {
           if (respuesta.status === 200) {
             // Asumimos que se borro el producto
             Swal.fire("Borrado", "Producto eliminado", "success");
+<<<<<<< HEAD
             props.consultarApi()
+=======
+            props.consultarApi();
+>>>>>>> dev
           }
           // Mostrar cartel de error
         } catch (error) {}
@@ -45,7 +49,7 @@ const ItemProducto = (props) => {
       <div>
         <Link
           className="btn btn-warning me-2 "
-          to={`/editar/${props.producto._id}`}
+          to={`/editar/${props.producto.id}`}
         >
           Editar
         </Link>

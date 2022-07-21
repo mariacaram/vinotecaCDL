@@ -1,9 +1,27 @@
 {
   "productos": [
     {
+<<<<<<< HEAD
       "nombreProducto": "maria",
+=======
+      "nombreProducto": "Don David Malbec",
+      "precioProducto": "1500",
+      "foto": "https://www.espaciovino.com.ar/media/default/0001/53/thumb_52806_default_big.jpeg",
+      "categoria": "Malbec",
+      "id": 4
+    },
+    {
+      "nombreProducto": "Novecento",
+      "precioProducto": "545",
+      "foto": "https://www.cordiez.com.ar/arquivos/ids/156519-500-400/VINO-NOVECENTO-MALBEC-1-2805.jpg?v=637432164402600000",
+      "categoria": "Malbec",
+      "id": 5
+    },
+    {
+      "nombreProducto": "Legado",
+>>>>>>> dev
       "precioProducto": "4500",
-      "foto": "hbdlkvbafd",
+      "foto": "https://pachecopereda.com/assets/img/productos/legado-tinto.png",
       "categoria": "Tanat",
       "id": 6
     },

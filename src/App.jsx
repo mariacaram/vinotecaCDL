@@ -9,11 +9,13 @@ import Login from './components/pages/Login';
 import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
 import AgregarProducto from './components/productos/AgregarProducto';
+import EditarProducto from './components/productos/EditarProducto';
 function App() {
   const URL = process.env.REACT_APP_API_URL;
 console.log (URL)
 const [productos, setProductos] = useState ([])
-useEffect (()=>{consultarApi()} , []);
+useEffect (()=>{consultarApi(); // eslint-disable-next-line react-hooks/exhaustive-deps
+} , []);
 
 const consultarApi = async() => {try {
 const respuesta = await fetch (URL)
@@ -34,6 +36,11 @@ console.log (error)
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos}consultarApi = {consultarApi} ></ListaProductos>}></Route>
         <Route exact path = "/login" element= {<Login></Login>}></Route>
         <Route exact path = "/nuevo" element= {<AgregarProducto consultarApi = {consultarApi}></AgregarProducto>}></Route>
+        <Route
+          exact
+          path="/editar/:id"
+          element={<EditarProducto consultarApi={consultarApi}></EditarProducto>}
+        ></Route>
       </Routes>
       <Footer></Footer>
     </Router>
