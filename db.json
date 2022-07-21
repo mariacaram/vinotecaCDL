@@ -8,15 +8,16 @@
       "id": 4
     },
     {
-      "nombreProducto": "Ho",
+      "nombreProducto": "Novecento",
       "precioProducto": "545",
-      "categoria": "Bonarda",
+      "foto": "https://www.cordiez.com.ar/arquivos/ids/156519-500-400/VINO-NOVECENTO-MALBEC-1-2805.jpg?v=637432164402600000",
+      "categoria": "Malbec",
       "id": 5
     },
     {
-      "nombreProducto": "maria",
+      "nombreProducto": "Legado",
       "precioProducto": "4500",
-      "foto": "hbdlkvbafd",
+      "foto": "https://pachecopereda.com/assets/img/productos/legado-tinto.png",
       "categoria": "Tanat",
       "id": 6
     }
