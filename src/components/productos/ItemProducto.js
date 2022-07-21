@@ -45,7 +45,7 @@ const ItemProducto = (props) => {
       <div>
         <Link
           className="btn btn-warning me-2 "
-          to={`/editar/${props.producto._id}`}
+          to={`/editar/${props.producto.id}`}
         >
           Editar
         </Link>
