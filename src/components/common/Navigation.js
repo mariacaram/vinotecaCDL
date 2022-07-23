@@ -16,6 +16,7 @@ class Navigation extends Component {
 <Link to="/adminBoard" className="nav-link">Admin Board</Link>
 <Link to="/store" className="nav-link">Store</Link>
 <Link to="/login" className="nav-link">Login</Link>
+<Link to="/Register" className="nav-link">Register</Link>
 
         </Nav>
       </Navbar.Collapse>

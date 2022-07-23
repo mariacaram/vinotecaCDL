@@ -10,6 +10,9 @@ import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
 import AgregarProducto from './components/productos/AgregarProducto';
 import EditarProducto from './components/productos/EditarProducto';
+import Register from './components/pages/Register';
+
+
 function App() {
   const URL = process.env.REACT_APP_API_URL;
 console.log (URL)
@@ -41,6 +44,7 @@ console.log (error)
           path="/editar/:id"
           element={<EditarProducto consultarApi={consultarApi}></EditarProducto>}
         ></Route>
+        <Route exact path = "/register" element= {<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>
     </Router>
