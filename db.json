@@ -20,6 +20,13 @@
       "foto": "https://media.revistagq.com/photos/5cfa20d7cb3e974d1a5fc3dd/3:2/w_3999,h_2666,c_limit/GettyImages-525440005.jpg",
       "categoria": "Malbec",
       "id": 9
+    },
+    {
+      "nombreProducto": "cafe",
+      "precioProducto": "6888",
+      "foto": "https://play-lh.googleusercontent.com/B3zo9gl4Gzz1j2hf4JZVcKqtX-CCWWjXFg6IrUYuD150FsUMkcU0i7lIjJHxwbUIonU",
+      "categoria": "Malbec",
+      "id": 10
     }
   ]
 }
