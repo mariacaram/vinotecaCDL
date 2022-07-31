@@ -1,20 +1,29 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import "./Cards.css"
 
 const Producto = (props) => {
     return (
+        
+        <div className="grid container">
+          <div class="row justify-content-center">
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={props.producto.foto} /> 
       <Card.Body>
         <Card.Title>{props.producto.nombreProducto}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {props.producto.precioProducto}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Text>
+          {props.producto.categoria}
+        </Card.Text>
+        <Button variant="primary">Comprar</Button>
       </Card.Body>
     </Card>
+    </div>
+    </div>
+    
     );
 };
 
