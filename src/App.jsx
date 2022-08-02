@@ -10,10 +10,14 @@ import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
 import AgregarProducto from './components/productos/AgregarProducto';
 import EditarProducto from './components/productos/EditarProducto';
+import Cart from './components/pages/Cart';
+import './animation.css';
+import ProductCart from './components/pages/ProductCart';
 function App() {
   const URL = process.env.REACT_APP_API_URL;
 console.log (URL)
-const [productos, setProductos] = useState ([])
+const [productos, setProductos] = useState ([]);
+const [cart, setCart] = useState ([])
 useEffect (()=>{consultarApi(); // eslint-disable-next-line react-hooks/exhaustive-deps
 } , []);
 
@@ -27,14 +31,15 @@ console.log (error)
 }
   return (
     <Router>
-      <Navigation></Navigation>
+      <Navigation cart = {cart}></Navigation>
 
       <Routes>
         <Route exact path = "/" element= {<Inicio></Inicio>}></Route>
-        <Route exact path = "/store" element= {<Store productos = {productos}></Store>}></Route>
-
+        <Route exact path = "/store" element= {<Store productos = {productos} cart = {cart} setCart = {setCart}></Store>}></Route>
+        <Route exact path = "/Cart" element= {<Cart productos = {productos}consultarApi = {consultarApi} cart = {cart} setCart = {setCart} ></Cart>}></Route>  
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos}consultarApi = {consultarApi} ></ListaProductos>}></Route>
         <Route exact path = "/login" element= {<Login></Login>}></Route>
+        <Route exact path = "/productocarrito" element= {<ProductCart></ProductCart>}></Route>
         <Route exact path = "/nuevo" element= {<AgregarProducto consultarApi = {consultarApi}></AgregarProducto>}></Route>
         <Route
           exact
