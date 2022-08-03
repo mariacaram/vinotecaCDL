@@ -3,9 +3,9 @@ import {Link} from "react-router-dom"
 import { Component } from "react";
 import React from 'react';
 
-class Navigation extends Component {
-    render (){
+const Navigation = ({cart}) => {
   return (
+
     <Navbar bg="primary" expand="lg" variant="dark">
     <Container>
       <Navbar.Brand href="#home">CRUD Cafe</Navbar.Brand>
@@ -17,12 +17,15 @@ class Navigation extends Component {
 <Link to="/store" className="nav-link">Store</Link>
 <Link to="/login" className="nav-link">Login</Link>
 <Link to="/Register" className="nav-link">Register</Link>
+<Link to="/cart" className="nav-link" >Carrito <span className="badge bg-warning">{cart.length}</span></Link>
 
         </Nav>
       </Navbar.Collapse>
     </Container>
   </Navbar>
   );
-}}
+
+
+};
 
 export default Navigation;
