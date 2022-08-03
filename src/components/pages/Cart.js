@@ -10,7 +10,7 @@ export default function Cart({cart}) {
                 <div className="products-cards col-12 col-md-8">
                     {cart.map((cartItem) => (
                         <ProductCart
-                            key={cartItem.producto.id}
+                            key={cartItem.producto._id}
                             cartItem={cartItem}
 
                         />

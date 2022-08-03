@@ -46,7 +46,7 @@ console.log (error)
         <Route exact path = "/nuevo" element= {<AgregarProducto consultarApi = {consultarApi}></AgregarProducto>}></Route>
         <Route
           exact
-          path="/editar/:id"
+          path="/editar/:_id"
           element={<EditarProducto consultarApi={consultarApi}></EditarProducto>}
         ></Route>
         <Route exact path = "/register" element= {<Register></Register>}></Route>

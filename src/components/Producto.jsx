@@ -11,7 +11,7 @@ console.log (cart.length)
 }
     
 useEffect(() => {
-    const inCart = cart.find ((productCart) =>productCart.producto.id === producto.id)
+    const inCart = cart.find ((productCart) =>productCart.producto._id === producto._id)
     if(inCart) {
       setIsInCart (true)
     }

@@ -6,11 +6,11 @@ import { campoRequerido, rangoNumero } from "../helpers/helpers";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 const EditarProducto = (props) => {
-  const { id } = useParams();
+  const { _id } = useParams();
   // console.log(id);
   const [producto, setProducto] = useState({});
   const [categoria, setCategoria] = useState("");
-  const URL = process.env.REACT_APP_API_URL + "/" + id;
+  const URL = process.env.REACT_APP_API_URL + "/" + _id;
   //crear variables ref
   const nombreProductoRef = useRef("");
   const precioProductoRef = useRef(0);
