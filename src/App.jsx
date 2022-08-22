@@ -10,8 +10,7 @@ import Store from './components/pages/Store';
 import { useState, useEffect } from 'react';
 import AgregarProducto from './components/productos/AgregarProducto';
 import EditarProducto from './components/productos/EditarProducto';
-import Register from './components/pages/Register';
-
+import AgregarUsuario from "./components/Usuarios/AgregarUsuario"
 
 import Cart from './components/pages/Cart';
 import './animation.css';
@@ -49,7 +48,7 @@ console.log (error)
           path="/editar/:_id"
           element={<EditarProducto consultarApi={consultarApi}></EditarProducto>}
         ></Route>
-        <Route exact path = "/register" element= {<Register></Register>}></Route>
+        <Route exact path = "/register" element= {<AgregarUsuario></AgregarUsuario>}></Route>
       </Routes>
       <Footer></Footer>
     </Router>
