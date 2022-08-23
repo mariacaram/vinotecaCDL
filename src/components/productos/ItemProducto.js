@@ -19,7 +19,7 @@ const ItemProducto = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const respuesta = await fetch(URL, {
+          const respuesta = await fetch(`${URL}productos`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
           });

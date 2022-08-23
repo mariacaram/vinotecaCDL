@@ -12,7 +12,7 @@ const AgregarProducto = (props) => {
   const [categoria, setCategoria] = useState("");
   const URL = process.env.REACT_APP_API_URL;
 const navigation = useNavigate();
-  console.log(URL);
+  console.log(`${URL}productos`);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -33,7 +33,8 @@ const navigation = useNavigate();
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productoNuevo),
         };
-        const respuesta = await fetch(URL, parametros);
+        
+        const respuesta = await fetch(`${URL}productos`, parametros);
         console.log(respuesta);
         if (respuesta.status === 201) {
           Swal.fire(

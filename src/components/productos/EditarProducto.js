@@ -21,7 +21,7 @@ const EditarProducto = (props) => {
     // consultar a la api el producto que tiene el id
     try {
       // realizar una consulta GET
-      const respuesta = await fetch(URL);
+      const respuesta = await fetch(`${URL}productos`);
       // console.log(respuesta)
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
@@ -56,7 +56,7 @@ const EditarProducto = (props) => {
       // console.log(productoModificado)
       try {
         //consulta PUT para modificar valores en la api
-        const respuesta = await fetch(URL, {
+        const respuesta = await fetch(`${URL}productos`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productoModificado),

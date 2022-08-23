@@ -24,7 +24,7 @@ useEffect (()=>{consultarApi(); // eslint-disable-next-line react-hooks/exhausti
 } , []);
 
 const consultarApi = async() => {try {
-const respuesta = await fetch (URL)
+const respuesta = await fetch (`${URL}productos`)
 const dato =  await respuesta.json()
 console.log (dato)
 setProductos(dato)} catch(error) {
