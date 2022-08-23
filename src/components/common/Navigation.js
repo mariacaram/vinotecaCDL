@@ -18,6 +18,7 @@ const Navigation = ({cart}) => {
 <Link to="/login" className="nav-link">Login</Link>
 <Link to="/Register" className="nav-link">Register</Link>
 <Link to="/cart" className="nav-link" >Carrito <span className="badge bg-warning">{cart.length}</span></Link>
+<Link to="/adminBoardUsuario" className="nav-link">Usuarios</Link>
 
         </Nav>
       </Navbar.Collapse>
