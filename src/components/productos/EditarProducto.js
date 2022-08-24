@@ -7,10 +7,11 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 const EditarProducto = (props) => {
   const { _id } = useParams();
-  // console.log(id);
+  // console.log(_id);
   const [producto, setProducto] = useState({});
   const [categoria, setCategoria] = useState("");
-  const URL = process.env.REACT_APP_API_URL + "/" + _id;
+  const URL = process.env.REACT_APP_API_URL + "/productos/" + _id;
+  console.log(URL)
   //crear variables ref
   const nombreProductoRef = useRef("");
   const precioProductoRef = useRef(0);
@@ -18,10 +19,11 @@ const EditarProducto = (props) => {
   const navigation = useNavigate();
 
   useEffect(async () => {
+
     // consultar a la api el producto que tiene el id
     try {
       // realizar una consulta GET
-      const respuesta = await fetch(`${URL}productos`);
+      const respuesta = await fetch(URL);
       // console.log(respuesta)
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
@@ -56,7 +58,7 @@ const EditarProducto = (props) => {
       // console.log(productoModificado)
       try {
         //consulta PUT para modificar valores en la api
-        const respuesta = await fetch(`${URL}productos`, {
+        const respuesta = await fetch(URL, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productoModificado),

@@ -3,7 +3,9 @@ import { ListGroup, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 const ItemProducto = (props) => {
-  const URL = process.env.REACT_APP_API_URL + "/" + props.producto._id;
+  const URLENV = process.env.REACT_APP_API_URL
+  const URL = `${URLENV}productos/${props.producto._id}`
+  console.log(URL)
   const eliminarProducto = () => {
     console.log(URL);
     Swal.fire({
@@ -19,7 +21,7 @@ const ItemProducto = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const respuesta = await fetch(`${URL}productos`, {
+          const respuesta = await fetch(URL, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
           });
