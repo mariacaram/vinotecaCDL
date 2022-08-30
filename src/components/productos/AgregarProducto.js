@@ -12,7 +12,7 @@ const AgregarProducto = (props) => {
   const [categoria, setCategoria] = useState("");
   const URL = process.env.REACT_APP_API_URL;
 const navigation = useNavigate();
-  console.log(`${URL}productos`);
+  // console.log(`${URL}productos`);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -35,7 +35,7 @@ const navigation = useNavigate();
         };
         
         const respuesta = await fetch(`${URL}productos`, parametros);
-        console.log(respuesta);
+        // console.log(respuesta);
         if (respuesta.status === 201) {
           Swal.fire(
             "Producto creado",
@@ -46,7 +46,7 @@ const navigation = useNavigate();
           props.consultarApi();
           navigation("/store")
         } else {
-          console.log("Debería mostrar error");
+          // console.log("Debería mostrar error");
         }
       } catch (error) {}
     }

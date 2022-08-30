@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCart from './ProductCart';
 
 export default function Cart({cart}) {
-    console.log(cart)
+    // console.log(cart)
     return (
         <div className="container-fluid">
             <h2 className="text-center my-5">Tu carrito</h2>

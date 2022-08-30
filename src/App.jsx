@@ -17,7 +17,7 @@ import './animation.css';
 import ProductCart from './components/pages/ProductCart';
 function App() {
   const URL = process.env.REACT_APP_API_URL;
-console.log (URL)
+// console.log (URL)
 const [productos, setProductos] = useState ([]);
 const [usuarios, setUsuarios] = useState ([]);
 const [cart, setCart] = useState ([])
@@ -29,17 +29,17 @@ useEffect (()=>{
 const consultarApi = async() => {try {
 const respuesta = await fetch (`${URL}productos`)
 const dato =  await respuesta.json()
-console.log (dato)
+// console.log (dato)
 setProductos(dato)} catch(error) {
-console.log (error)
+// console.log (error)
 }
 }
 const consultarApiUsuarios = async() => {try {
   const respuesta = await fetch (`${URL}usuario`)
   const dato =  await respuesta.json()
-  console.log (dato)
+  // console.log (dato)
   setUsuarios(dato)} catch(error) {
-  console.log (error)
+  // console.log (error)
   }
   }
   return (
@@ -59,7 +59,7 @@ const consultarApiUsuarios = async() => {try {
           path="/editar/:_id"
           element={<EditarProducto consultarApi={consultarApi}></EditarProducto>}
         ></Route>
-        <Route exact path = "/register" element= {<AgregarUsuario usuarios = {usuarios} consultarApiUsuarios = {consultarApiUsuarios}></AgregarUsuario>}></Route>
+        <Route exact path = "/register" element= {<AgregarUsuario consultarApiUsuarios = {consultarApiUsuarios}></AgregarUsuario>}></Route>
         <Route exact path = "/adminBoardUsuario" element= {<ListaUsuario usuarios = {usuarios}consultarApiUsuarios = {consultarApiUsuarios} ></ListaUsuario>}></Route>
 
       </Routes>
