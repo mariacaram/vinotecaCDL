@@ -2,6 +2,7 @@ import React from "react";
 import { Container, ListGroup, Button } from "react-bootstrap";
 import ItemUsuario from "./ItemUsuario"
 import {Link} from 'react-router-dom'
+import Table from 'react-bootstrap/Table';
 
 const ListaUsuario = (props) => {
 
@@ -13,9 +14,19 @@ const ListaUsuario = (props) => {
         <p className="my-0 me-4 fw-bold">Agregar nuevos usuarios: </p>
 <Link to="/nuevo" className="btn btn-primary">Agregar</Link>
       </article>
-      <ListGroup>
+      <Table striped>
+       <thead>
+       <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>Mail</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
 {props.usuarios.map ((usuario)=><ItemUsuario key= {usuario._id} usuario = {usuario} consultarApi= {props.consultarApiUsuario}></ItemUsuario>)}
-      </ListGroup>
+        </Table>
+      
     </Container>
   );
 };

@@ -2,6 +2,8 @@ import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import Table from 'react-bootstrap/Table';
+
 const ItemUsuario = (props) => {
   const URLENV = process.env.REACT_APP_API_URL
   const URL = `${URLENV}usuario/${props.usuario._id}`
@@ -37,15 +39,15 @@ const ItemUsuario = (props) => {
   };
   return (
     
-    <ListGroup.Item className="d-flex justify-content-between">
-      <p>
-        {props.usuario.nombreUsuario}
-        <span className="fw-bolder">
-          - mail: ${props.usuario.mailUsuario}
-        </span>
-      </p>
-      <div>
-        <Link
+
+
+        <tbody>
+        <tr>
+          <td>{props.usuario.nombreUsuario}</td>
+          <td>{props.usuario.apellidoUsuario}</td>
+          <td>{props.usuario.dniUsuario}</td>
+          <td>{props.usuario.mailUsuario}</td>
+          <td> <Link
           className="btn btn-warning me-2 "
           to={`/editarUsuario/${props.usuario._id}`}
         >
@@ -54,10 +56,11 @@ const ItemUsuario = (props) => {
 
         <Button variant="danger" onClick={() => eliminarUsuario()}>
           Borrar
-        </Button>
-      </div>
-    </ListGroup.Item>
-  );
-};
+        </Button></td>
+        </tr>
+        </tbody>
+      )}
+       
+
 
 export default ItemUsuario;
