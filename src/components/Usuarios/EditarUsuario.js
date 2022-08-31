@@ -144,8 +144,8 @@ const EditarUsuario = (props) => {
             onChange={(e) => setRol(e.target.value)}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="Admin">Admin</option>
-            <option value="User">User</option>
+            <option value="admin">Admin</option>
+            <option value="aser">User</option>
           </Form.Select>
         </Form.Group>
         <Button variant="primary" type="submit" className="w-100">
