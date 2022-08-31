@@ -9,14 +9,17 @@ const EditarUsuario = (props) => {
   const { _id } = useParams();
   // console.log(_id);
   const [usuario, setUsuario] = useState({});
-//   const [rol, setRol] = useState("");
+  const [rol, setRol] = useState("");
   const URL = process.env.REACT_APP_API_URL + "/usuario/" + _id;
   console.log(URL)
   //crear variables ref
   const nombreUsuarioRef = useRef("");
   const apellidoUsuarioRef = useRef("");
-  const mailUsuarioRef = useRef("");
   const dniUsuarioRef = useRef(0);
+
+  const mailUsuarioRef = useRef("");
+  const rolUsuarioRef = useRef("");
+
   const navigation = useNavigate();
 
   useEffect(async () => {
@@ -30,7 +33,7 @@ const EditarUsuario = (props) => {
         const dato = await respuesta.json();
         // console.log(dato);
         setUsuario(dato);
-        // setRol(dato.rol);
+        setRol(dato.rol);
       }
     } catch (error) {
       console.log(error);
@@ -53,6 +56,8 @@ const EditarUsuario = (props) => {
         mailUsuario: mailUsuarioRef.current.value,
         apellidoUsuario: apellidoUsuarioRef.current.value,
         dniUsuario: dniUsuarioRef.current.value,
+        rol: rolUsuarioRef.current.value,
+
         // rol,
       };
       // console.log(productoModificado)
@@ -134,14 +139,14 @@ const EditarUsuario = (props) => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Label>Rol</Form.Label>
-          {/* <Form.Select
+          <Form.Select
             value={rol}
             onChange={(e) => setRol(e.target.value)}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="Malbec">Admin</option>
-            <option value="Bonarda">Guest</option>
-          </Form.Select> */}
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+          </Form.Select>
         </Form.Group>
         <Button variant="primary" type="submit" className="w-100">
           Guardar cambios

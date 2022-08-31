@@ -36,6 +36,7 @@ const ItemUsuario = (props) => {
     });
   };
   return (
+    
     <ListGroup.Item className="d-flex justify-content-between">
       <p>
         {props.usuario.nombreUsuario}
