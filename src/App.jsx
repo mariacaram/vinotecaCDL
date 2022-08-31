@@ -15,6 +15,7 @@ import ListaUsuario from './components/Usuarios/ListaUsuario';
 import Cart from './components/pages/Cart';
 import './animation.css';
 import ProductCart from './components/pages/ProductCart';
+import EditarUsuario from './components/Usuarios/EditarUsuario';
 function App() {
   const URL = process.env.REACT_APP_API_URL;
 // console.log (URL)
@@ -61,7 +62,11 @@ const consultarApiUsuarios = async() => {try {
         ></Route>
         <Route exact path = "/register" element= {<AgregarUsuario consultarApiUsuarios = {consultarApiUsuarios}></AgregarUsuario>}></Route>
         <Route exact path = "/adminBoardUsuario" element= {<ListaUsuario usuarios = {usuarios}consultarApiUsuarios = {consultarApiUsuarios} ></ListaUsuario>}></Route>
-
+        <Route
+          exact
+          path="/editarUsuario/:_id"
+          element={<EditarUsuario consultarApiUsuarios={consultarApiUsuarios}></EditarUsuario>}></Route>
+        
       </Routes>
       <Footer></Footer>
     </Router>

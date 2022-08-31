@@ -98,8 +98,7 @@ const EditarProducto = (props) => {
             type="text"
             placeholder="Ej: café"
             defaultValue={producto.nombreProducto}
-            ref={nombreProductoRef}
-          />
+            ref={nombreProductoRef}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">

@@ -3,7 +3,8 @@ import { ListGroup, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 const ItemUsuario = (props) => {
-  const URL = process.env.REACT_APP_API_URL + "/" + props.usuario._id;
+  const URLENV = process.env.REACT_APP_API_URL
+  const URL = `${URLENV}usuario/${props.usuario._id}`
   const eliminarUsuario = () => {
     console.log(URL);
     Swal.fire({
@@ -19,7 +20,7 @@ const ItemUsuario = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const respuesta = await fetch(`${URL}usuario`, {
+          const respuesta = await fetch(URL, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
           });
@@ -45,7 +46,7 @@ const ItemUsuario = (props) => {
       <div>
         <Link
           className="btn btn-warning me-2 "
-          to={`/editar/${props.usuario._id}`}
+          to={`/editarUsuario/${props.usuario._id}`}
         >
           Editar
         </Link>
