@@ -21,6 +21,7 @@ const ListaUsuario = (props) => {
           <th>Apellido</th>
           <th>DNI</th>
           <th>Mail</th>
+          <th>Rol</th>
           <th>Acciones</th>
         </tr>
         </thead>

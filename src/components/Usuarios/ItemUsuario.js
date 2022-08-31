@@ -47,6 +47,8 @@ const ItemUsuario = (props) => {
           <td>{props.usuario.apellidoUsuario}</td>
           <td>{props.usuario.dniUsuario}</td>
           <td>{props.usuario.mailUsuario}</td>
+          <td>{props.usuario.rol}</td>
+
           <td> <Link
           className="btn btn-warning me-2 "
           to={`/editarUsuario/${props.usuario._id}`}
