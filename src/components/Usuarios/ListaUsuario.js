@@ -12,7 +12,7 @@ const ListaUsuario = (props) => {
       <hr />
       <article className="d-flex align-items-center mb-4 justify-content-end">
         <p className="my-0 me-4 fw-bold">Agregar nuevos usuarios: </p>
-<Link to="/nuevo" className="btn btn-primary">Agregar</Link>
+<Link to="/register" className="btn btn-primary">Agregar</Link>
       </article>
       <Table striped>
        <thead>

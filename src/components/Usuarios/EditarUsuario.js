@@ -15,6 +15,7 @@ const EditarUsuario = (props) => {
   //crear variables ref
   const nombreUsuarioRef = useRef("");
   const apellidoUsuarioRef = useRef("");
+  
   const dniUsuarioRef = useRef(0);
 
   const mailUsuarioRef = useRef("");
@@ -56,7 +57,7 @@ const EditarUsuario = (props) => {
         mailUsuario: mailUsuarioRef.current.value,
         apellidoUsuario: apellidoUsuarioRef.current.value,
         dniUsuario: dniUsuarioRef.current.value,
-        rol: rolUsuarioRef.current.value,
+        rol: rol,
 
         // rol,
       };
@@ -79,8 +80,9 @@ const EditarUsuario = (props) => {
             "success"
           );
           //consultar nuevamente a la api
-          props.consultarApiUsuario();
-          navigation("/store")
+          props.consultarApiUsuarios();
+          navigation("/adminBoardUsuario")
+
           
         }
       } catch (error) {
@@ -145,7 +147,7 @@ const EditarUsuario = (props) => {
           >
             <option value="">Seleccione una opcion</option>
             <option value="admin">Admin</option>
-            <option value="aser">User</option>
+            <option value="user">User</option>
           </Form.Select>
         </Form.Group>
         <Button variant="primary" type="submit" className="w-100">
