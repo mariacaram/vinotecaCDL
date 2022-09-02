@@ -14,18 +14,16 @@ const AgregarProducto =(props) => {
   const URL = process.env.REACT_APP_API_URL;
   console.log(URL);
   const handleSubmitUsuario = async (e) => {
-    e.preventDesfault();
+    e.preventDefault();
     if (
-      campoRequerido(nombreUsuario) &&
-      campoRequerido(apellidoUsuario) &&
-      campoRequerido(mailUsuario) &&
-      rangoNumero(dniUsuario)
+      campoRequerido(nombreUsuario) 
     ) {
       const UsuarioNuevo = {
         nombreUsuario: nombreUsuario,
         apellidoUsuario: apellidoUsuario,
         dniUsuario: dniUsuario,
         mailUsuario: mailUsuario,
+        password: password
       };
       try {
         
