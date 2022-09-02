@@ -39,7 +39,7 @@ const consultarApiUsuarios = async() => {try {
   const respuesta = await fetch (`${URL}usuario`)
   const dato =  await respuesta.json()
   // console.log (dato)
-  setUsuarios(dato)} catch(error) {
+  setUsuarios(dato); console.log("funciona consultar api usuarios")} catch(error) {
   // console.log (error)
   }
   }
@@ -52,7 +52,7 @@ const consultarApiUsuarios = async() => {try {
         <Route exact path = "/store" element= {<Store productos = {productos} cart = {cart} setCart = {setCart}></Store>}></Route>
         <Route exact path = "/Cart" element= {<Cart productos = {productos}consultarApi = {consultarApi} cart = {cart} setCart = {setCart} ></Cart>}></Route>  
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos}consultarApi = {consultarApi} ></ListaProductos>}></Route>
-        <Route exact path = "/login" element= {<Login></Login>}></Route>
+        <Route exact path = "/login" element= {<Login setUsuarios= {setUsuarios} ></Login>}></Route>
         <Route exact path = "/productocarrito" element= {<ProductCart></ProductCart>}></Route>
         <Route exact path = "/nuevo" element= {<AgregarProducto consultarApi = {consultarApi}></AgregarProducto>}></Route>
         <Route
