@@ -10,6 +10,7 @@ const AgregarProducto =(props) => {
   const [apellidoUsuario, setApellidoUsuario] = useState("");
   const [dniUsuario, setdniUsuario] = useState(0);
   const [mailUsuario, setMailUsuario] = useState("");
+  const [password, setPassword] = useState("");
   const URL = process.env.REACT_APP_API_URL;
   console.log(URL);
   const handleSubmitUsuario = async (e) => {
@@ -62,7 +63,7 @@ const AgregarProducto =(props) => {
                 className="mb-3"
                 controlId="exampleForm.ControlInput1">
                 <Form.Label>Apellido</Form.Label>
-                <Form.Control onChange={(e) => setApellidoUsuario(e.target.value)} type="email" placeholder="" />
+                <Form.Control onChange={(e) => setApellidoUsuario(e.target.value)} type="text" placeholder="" />
               </Form.Group>
               <Form.Group
                 className="mb-3"
@@ -71,7 +72,7 @@ const AgregarProducto =(props) => {
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control 
                 onChange={(e) => setNombreUsuario(e.target.value)}
-                type="email" placeholder="" />
+                type="text" placeholder="" />
               </Form.Group>
               
               <Form.Group
@@ -81,7 +82,7 @@ const AgregarProducto =(props) => {
                 <Form.Label>D.N.I.</Form.Label>
                 <Form.Control 
                 onChange={(e) => setdniUsuario(e.target.value)}
-type="email" placeholder="" />
+type="number" placeholder="" />
               </Form.Group>
               <Form.Group
                 className="mb-3"
@@ -91,6 +92,15 @@ type="email" placeholder="" />
                 <Form.Control 
                 onChange={(e) => setMailUsuario(e.target.value)}
                 type="email" placeholder="name@example.com" />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control 
+                onChange={(e) => setPassword(e.target.value)}
+                type="password" placeholder="name@example.com" />
               </Form.Group>
               <Button as="input" type="submit" value="Registrarse" />
             </Form>
