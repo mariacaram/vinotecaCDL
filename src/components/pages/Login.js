@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
 
   const [mailUsuario, setMailUsuario] = useState("");
   const [password, setPassword] = useState("");
@@ -49,7 +49,11 @@ const Login = () => {
             "Usuario logueado!",
             "Autentificación exitosa",
             "success"
+            
           );
+          setUsuarioLogueado(dato)
+          console.log(dato)
+
           // resetear el formulario
           e.target.reset(); //el e.target en este caso por el submitt es el form
           //Guardo el token de acceso del usaurio en localStorage

@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-
+import React, { Component, Fragment } from 'react';
+import './inicio.css';
 import fondo from '../../img/fondo.jpg'
+import CarouselComponent from '../Carousel';
 class Inicio extends Component {
     render() {
         return (
-            <img src={fondo} alt="Fondo de cafe" className='w-100'/>
+            <div>
+                <CarouselComponent></CarouselComponent>
+
+            </div>
         );
     }
 }

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import { Component } from "react";
 import React from 'react';
 
-const Navigation = ({cart}) => {
+const Navigation = ({cart, usuarioLogueado}) => {
   return (
 
     <Navbar bg="primary" expand="lg" variant="dark">

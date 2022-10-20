@@ -21,7 +21,8 @@ function App() {
 // console.log (URL)
 const [productos, setProductos] = useState ([]);
 const [usuarios, setUsuarios] = useState ([]);
-const [cart, setCart] = useState ([])
+const [cart, setCart] = useState ([]);
+const [usuarioLogueado, setUsuarioLogueado] = useState ([])
 useEffect (()=>{
   consultarApi() // eslint-disable-next-line react-hooks/exhaustive-deps
   consultarApiUsuarios(); // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -45,14 +46,14 @@ const consultarApiUsuarios = async() => {try {
   }
   return (
     <Router>
-      <Navigation cart = {cart}></Navigation>
+      <Navigation cart = {cart} usuarioLogueado = {usuarioLogueado} ></Navigation>
 
       <Routes>
         <Route exact path = "/" element= {<Inicio></Inicio>}></Route>
         <Route exact path = "/store" element= {<Store productos = {productos} cart = {cart} setCart = {setCart}></Store>}></Route>
         <Route exact path = "/Cart" element= {<Cart productos = {productos}consultarApi = {consultarApi} cart = {cart} setCart = {setCart} ></Cart>}></Route>  
         <Route exact path = "/adminBoard" element= {<ListaProductos productos = {productos}consultarApi = {consultarApi} ></ListaProductos>}></Route>
-        <Route exact path = "/login" element= {<Login setUsuarios= {setUsuarios} ></Login>}></Route>
+        <Route exact path = "/login" element= {<Login setUsuarioLogueado = {setUsuarioLogueado} ></Login>}></Route>
         <Route exact path = "/productocarrito" element= {<ProductCart></ProductCart>}></Route>
         <Route exact path = "/nuevo" element= {<AgregarProducto consultarApi = {consultarApi}></AgregarProducto>}></Route>
         <Route
